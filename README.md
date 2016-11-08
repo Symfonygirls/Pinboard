@@ -1,4 +1,17 @@
 pinboard
 ========
 
-A Symfony project created on November 8, 2016, 11:11 am.
+Tag: 1
+------
+- Rimuovere il bundle AppBundle
+- Creare il bundle PinboardBundle con console generator
+    - rinominare controller e paths in FrontendController
+- creare Homepage route
+    - dare nome alla rotta "homepage"
+- creare Homepage controller
+- creare Homepage template
+- creare Info route
+- creare Info controller
+- creare Info template
+
+
