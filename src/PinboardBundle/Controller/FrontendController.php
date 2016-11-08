@@ -12,6 +12,10 @@ class FrontendController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('PinboardBundle:Frontend:index.html.twig');
+        $homepage_h1 = 'Welcome to Pinboard!';
+
+        return $this->render('PinboardBundle:Frontend:index.html.twig', array(
+            'homepage_h1' => $homepage_h1
+        ));
     }
 }

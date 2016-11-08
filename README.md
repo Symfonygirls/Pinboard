@@ -6,10 +6,12 @@ Tag: 1
 - Rimuovere il bundle AppBundle
 - Creare il bundle PinboardBundle con console generator
     - rinominare controller e paths in FrontendController
-- creare Homepage route
+- modificare Homepage route
     - dare nome alla rotta "homepage"
-- creare Homepage controller
-- creare Homepage template
+- modificare Homepage controller
+    - configurare parametri della rotta e passarli al template
+- modificare Homepage template
+    - extends del base per vedere debug bar
 - creare Info route
 - creare Info controller
 - creare Info template
