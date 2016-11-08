@@ -12,6 +12,7 @@ Tag: 1
     - configurare parametri della rotta e passarli al template
 - modificare Homepage template
     - extends del base per vedere debug bar
+    - aggiungere un parametro al controller e renderizzarlo nel template
 - creare Info route
 - creare Info controller
 - creare Info template
