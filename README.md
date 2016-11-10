@@ -32,7 +32,7 @@ Tag: 3
         - Title
         - Description
         - Image
-        - Url
+        - Slug
     - generare getters / setters:
 ```{r, engine='bash', count_lines}
 php bin/console generate:doctrine:entities PinboardBundle/Entity/Card
@@ -46,6 +46,19 @@ php bin/console doctrine:schema:update --force
 ```        
 - Modificato parametro $name in $slug per la rotta card
 - Modifica dello stub in homepage ed estrazione dei dati dal DB   
+- Setup pagina Card con dati dinamici
+
+Tag: 4
+------
+- Aggiunta campo "active" e sort alla card
+- Modifica delle fixtures
+- modifica del repository e aggiunta di query più complessa, estrarre Cards attive
+- Introduzione a service container
+- Creazione servizio per estrarre Cards
+
+
+    
+
  
     
     
