@@ -58,8 +58,17 @@ class FrontendController extends Controller
      */
     public function cardAction($slug)
     {
+        $cards_repository = $this->getDoctrine()
+            ->getRepository('PinboardBundle:Card');
+
+        //the slug is a unique field in our database, so we use it to grab the card
+        $card = $cards_repository->findOneBy(array(
+            'slug' =>  $slug
+        ));
+
+        //we need to change the variable. Now we pass the entire Card entity
         return $this->render('PinboardBundle:Frontend:card.html.twig', array(
-            'card_name' => $slug
+            'card' => $card
         ));
     }
 }

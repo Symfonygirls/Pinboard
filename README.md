@@ -45,16 +45,21 @@ php bin/console generate:doctrine:entities PinboardBundle/Entity/Card
 php bin/console doctrine:schema:update --force
 ```        
 - Modificato parametro $name in $slug per la rotta card
-- Modifica dello stub in homepage ed estrazione dei dati dal DB   
-- Setup pagina Card con dati dinamici
 
 Tag: 4
+------
+- Modifica dello stub in homepage ed estrazione dei dati dal DB  
+- Setup pagina Card con dati dinamici
+    - modificare lo slug in unique in database 
+    - query della card dato il suo slug
+
+Tag: 5
 ------
 - Aggiunta campo "active" e sort alla card
 - Modifica delle fixtures
 - modifica del repository e aggiunta di query più complessa, estrarre Cards attive
 
-Tag: 5
+Tag: 6
 ------
 - Introduzione a service container
 - Creazione servizio per estrarre Cards
