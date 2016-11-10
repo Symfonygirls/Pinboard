@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>{{ card_name }}</h1>
+    <img src="{{ card.image }}">
+    <h1>{{ card.title }}</h1>
+    <p>{{ card.description }}</p>
 {% endblock %}
