@@ -1,3 +1,5 @@
-app:
-    resource: "@AppBundle/Controller/"
+pinboard:
+    resource: "@PinboardBundle/Controller/"
     type:     annotation
+    prefix:   /
+

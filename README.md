@@ -1,4 +1,25 @@
 pinboard
 ========
 
-A Symfony project created on November 8, 2016, 11:11 am.
+Tag: 1
+------
+- Rimuovere il bundle AppBundle
+- Creare il bundle PinboardBundle con console generator
+    - rinominare controller e paths in FrontendController
+- modificare Homepage route
+    - dare nome alla rotta "homepage"
+- modificare Homepage controller
+    - configurare parametri della rotta e passarli al template
+- modificare Homepage template
+    - extends del base per vedere debug bar
+    - aggiungere un parametro al controller e renderizzarlo nel template
+- creare Info route
+- creare Info controller
+- creare Info template
+
+
+Tag: 2
+------
+- Creare Single Card Action con named parameter
+- Creare stub di cards da renderizzare in homepage
+    - utilizzo di url generator in controller e introduzione a service container
