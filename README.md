@@ -53,6 +53,9 @@ Tag: 4
 - Aggiunta campo "active" e sort alla card
 - Modifica delle fixtures
 - modifica del repository e aggiunta di query più complessa, estrarre Cards attive
+
+Tag: 5
+------
 - Introduzione a service container
 - Creazione servizio per estrarre Cards
 
