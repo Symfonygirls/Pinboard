@@ -2,5 +2,11 @@
 
 {% block body %}
     <h1>{{ homepage_h1 }}</h1>
-    This is the homepage content, Well done!
+    {% for card in cards %}
+        <div>
+            <h2>{{ card.title }}</h2>
+            <p>{{ card.description }}</p>
+            <a href="{{ card.url }}">Go to {{ card.title }}</a>
+        </div>
+    {% endfor %}
 {% endblock %}

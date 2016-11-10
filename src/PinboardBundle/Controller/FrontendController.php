@@ -20,8 +20,39 @@ class FrontendController extends Controller
     {
         $homepage_h1 = 'Welcome to Pinboard!';
 
+        //let's add an array of cards stub. This will be changed and changed into a real thing later.
+        //generateUrl is a method implemented from UrlGeneratorInterface which uses the "router" Service
+        //with generateUrl we let Symfony create for us the url by a given route and its parameters ( In our case "name" )
+        $cards = [
+          'card_1' => [
+              'title' => 'Card 1',
+              'description' => 'This is card 1',
+              'url' => $this->generateUrl('card', [
+                  'name' => 'card-1'
+                  ]
+              )
+          ],
+          'card_2' => [
+              'title' => 'Card 2',
+              'description' => 'This is card 2',
+              'url' => $this->generateUrl('card', [
+                      'name' => 'card-2'
+                  ]
+              )
+          ],
+          'card_3' => [
+              'title' => 'Card 3',
+              'description' => 'This is card 3',
+              'url' => $this->generateUrl('card', [
+                      'name' => 'card-3'
+                  ]
+              )
+          ]
+        ];
+
         return $this->render('PinboardBundle:Frontend:index.html.twig', array(
-            'homepage_h1' => $homepage_h1
+            'homepage_h1' => $homepage_h1,
+            'cards' => $cards
         ));
     }
 
