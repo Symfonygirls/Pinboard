@@ -18,4 +18,16 @@ class FrontendController extends Controller
             'homepage_h1' => $homepage_h1
         ));
     }
+
+    /**
+     * @Route("/info", name="info")
+     */
+    public function infoAction()
+    {
+        $info_h1 = 'This is the info page';
+
+        return $this->render('PinboardBundle:Frontend:info.html.twig', array(
+            'info_h1' => $info_h1
+        ));
+    }
 }
