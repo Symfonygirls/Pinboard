@@ -17,9 +17,20 @@ Tag: 1
 - creare Info controller
 - creare Info template
 
-
 Tag: 2
 ------
 - Creare Single Card Action con named parameter
 - Creare stub di cards da renderizzare in homepage
     - utilizzo di url generator in controller e introduzione a service container
+    
+Tag: 3
+------
+- Introduzione a Doctrine
+- Introduzione all'uso delle fixtures
+    - installazione di fixtures bundle
+- Creazione tabella Cards
+    - creazione prima fixture "CardsFixtures"
+- Modifica dello stub in homepage ed estrazione dei dati dal DB   
+ 
+    
+    
