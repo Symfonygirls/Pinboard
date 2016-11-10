@@ -18,3 +18,8 @@ Tag: 1
 - creare Info template
 
 
+Tag: 2
+------
+- Creare Single Card Action con named parameter
+- Creare stub di cards da renderizzare in homepage
+    - utilizzo di url generator in controller e introduzione a service container
