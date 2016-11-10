@@ -26,10 +26,25 @@ Tag: 2
 Tag: 3
 ------
 - Introduzione a Doctrine
+- Creazione entity e tabella Cards
+    - php bin/console doctrine:generate:entity
+    - aggiunta campi custom:
+        - Title
+        - Description
+        - Image
+        - Url
+    - generare getters / setters:
+```{r, engine='bash', count_lines}
+php bin/console generate:doctrine:entities PinboardBundle/Entity/Card
+```    
 - Introduzione all'uso delle fixtures
-    - installazione di fixtures bundle
-- Creazione tabella Cards
+    - installazione di fixtures bundle ( vedi doc ufficiale )
     - creazione prima fixture "CardsFixtures"
+    - Update del db
+```{r, engine='bash', count_lines}
+php bin/console doctrine:schema:update --force
+```        
+- Modificato parametro $name in $slug per la rotta card
 - Modifica dello stub in homepage ed estrazione dei dati dal DB   
  
     

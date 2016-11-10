@@ -6,7 +6,7 @@
         <div>
             <h2>{{ card.title }}</h2>
             <p>{{ card.description }}</p>
-            <a href="{{ card.url }}">Go to {{ card.title }}</a>
+            <a href="{{ path('card', {'slug': card.slug}) }}">Go to {{ card.title }}</a>
         </div>
     {% endfor %}
 {% endblock %}
