@@ -31,14 +31,14 @@ class Card
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
 
@@ -48,6 +48,20 @@ class Card
      * @ORM\Column(type="string", length=255, unique=true)
      */
     private $slug;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $sort = 0;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $active = false;
 
     /**
      * Get id
@@ -153,5 +167,53 @@ class Card
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set sort
+     *
+     * @param string $sort
+     *
+     * @return Card
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Get sort
+     *
+     * @return string
+     */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     *
+     * @return Card
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 }
