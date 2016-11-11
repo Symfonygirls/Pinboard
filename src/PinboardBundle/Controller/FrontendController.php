@@ -4,6 +4,8 @@ namespace PinboardBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
+use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 /**
  * Class FrontendController
@@ -15,6 +17,9 @@ class FrontendController extends Controller
      * The main page of Pinboard!
      *
      * @Route("/", name="homepage")
+     *
+     * @throws ServiceCircularReferenceException
+     * @throws ServiceNotFoundException
      */
     public function indexAction()
     {
@@ -22,8 +27,9 @@ class FrontendController extends Controller
 
         //all the logic we implemented to find the cards at first has now been moved inside a Service
         //responsible of the entire "cards" management.
-        //Here is where also the future Cards logic will be put.
-
+        //Here is where will be put also the future Cards logic.
+        $cards = $this->container->get('pinboard.cards_manager')
+            ->getCards('ASC');
 
         return $this->render('PinboardBundle:Frontend:index.html.twig', array(
             'homepage_h1' => $homepage_h1,
