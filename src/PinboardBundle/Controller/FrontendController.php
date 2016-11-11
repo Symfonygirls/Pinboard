@@ -20,16 +20,10 @@ class FrontendController extends Controller
     {
         $homepage_h1 = 'Welcome to Pinboard!';
 
-        //We now call the Card Repository class and "findAll" the Cards saved in database
-        //The route will be now built directly in the database, calling the Symfony Twig function "url"
-        $cards_repository = $this->getDoctrine()
-            ->getRepository('PinboardBundle:Card');
+        //all the logic we implemented to find the cards at first has now been moved inside a Service
+        //responsible of the entire "cards" management.
+        //Here is where also the future Cards logic will be put.
 
-        //now it's time to use the queryBuilder to created advanced queries.
-        //we refine Cards search looking for "active" and sorting ASC by "sort" field
-        //we bring all the logic inside the class CardRepository so it can be reusable
-        $cards = $cards_repository
-            ->getActiveCards('ASC');
 
         return $this->render('PinboardBundle:Frontend:index.html.twig', array(
             'homepage_h1' => $homepage_h1,
