@@ -14,6 +14,10 @@ class LoadCardBundle implements FixtureInterface
         $card1->setDescription('Card 1 description');
         $card1->setImage('https://source.unsplash.com/random/300x200');
         $card1->setSlug('card-1');
+        //we add the sort and the status of the card
+        $card1->setActive(true);
+        //let's define the sort of every card
+        $card1->setSort(2);
 
         $manager->persist($card1);
 
@@ -22,6 +26,7 @@ class LoadCardBundle implements FixtureInterface
         $card2->setDescription('Card 2 description');
         $card2->setImage('https://source.unsplash.com/random/300x200');
         $card2->setSlug('card-2');
+        //we don't set the active value for card 2, it will be "false" by default and sort "0"
 
         $manager->persist($card2);
 
@@ -30,6 +35,10 @@ class LoadCardBundle implements FixtureInterface
         $card3->setDescription('Card 3 description');
         $card3->setImage('https://source.unsplash.com/random/300x200');
         $card3->setSlug('card-3');
+        $card3->setActive(true);
+        //the card 3 will be the first displayed
+        $card3->setSort(1);
+
 
         $manager->persist($card3);
 
@@ -38,6 +47,9 @@ class LoadCardBundle implements FixtureInterface
         $card4->setDescription('Card 4 description');
         $card4->setImage('https://source.unsplash.com/random/300x200');
         $card4->setSlug('card-4');
+        $card4->setActive(true);
+        //this will be displayed as last card
+        $card4->setSort(3);
 
         $manager->persist($card4);
 

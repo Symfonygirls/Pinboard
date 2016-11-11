@@ -55,9 +55,12 @@ Tag: 4
 
 Tag: 5
 ------
-- Aggiunta campo "active" e sort alla card
+- Aggiunta campo "active" e "sort" alla card
+    - rebuild delle entities
+    - aggiunta dei nullable nella entity, tutti i campi
 - Modifica delle fixtures
 - modifica del repository e aggiunta di query più complessa, estrarre Cards attive
+    - descrizione e utilizzo del queryBuilder
 
 Tag: 6
 ------
