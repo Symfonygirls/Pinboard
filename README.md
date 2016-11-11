@@ -59,8 +59,9 @@ Tag: 5
     - rebuild delle entities
     - aggiunta dei nullable nella entity, tutti i campi
 - Modifica delle fixtures
+- descrizione e utilizzo del queryBuilder
 - modifica del repository e aggiunta di query più complessa, estrarre Cards attive
-    - descrizione e utilizzo del queryBuilder
+    
 
 Tag: 6
 ------

@@ -27,12 +27,9 @@ class FrontendController extends Controller
 
         //now it's time to use the queryBuilder to created advanced queries.
         //we refine Cards search looking for "active" and sorting ASC by "sort" field
-        $cards = $cards_repository->createQueryBuilder('c')
-            ->where('c.active = :active_param')
-            ->setParameter('active_param', true)
-            ->orderBy('c.sort', 'ASC')
-            ->getQuery()
-            ->getResult();
+        //we bring all the logic inside the class CardRepository so it can be reusable
+        $cards = $cards_repository
+            ->getActiveCards('ASC');
 
         return $this->render('PinboardBundle:Frontend:index.html.twig', array(
             'homepage_h1' => $homepage_h1,
