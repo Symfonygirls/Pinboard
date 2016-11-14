@@ -5,7 +5,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use PinboardBundle\Entity\Card;
 
-class LoadCardBundle implements FixtureInterface
+class LoadCardFixtures implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
