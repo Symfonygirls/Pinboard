@@ -68,6 +68,14 @@ Tag: 6
 - Introduzione a service container
 - Creazione servizio per estrarre Cards
 
+Tag: 7
+------
+- Security: Authorization vs Authentication
+- Creazione di UserBundle
+    - eppurazione da cartelle inutili ( views, controller Default )
+- Database Users Provider: http://symfony.com/doc/current/security/entity_provider.html 
+- Creiamo fixtures di utenti nel bundle UserBundle
+- Autentichiamo con Basic Auth
 
     
 

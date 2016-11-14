@@ -4,6 +4,8 @@ namespace PinboardBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
+use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
 
 /**
  * Class FrontendController
@@ -15,21 +17,19 @@ class FrontendController extends Controller
      * The main page of Pinboard!
      *
      * @Route("/", name="homepage")
+     *
+     * @throws ServiceCircularReferenceException
+     * @throws ServiceNotFoundException
      */
     public function indexAction()
     {
         $homepage_h1 = 'Welcome to Pinboard!';
 
-        //We now call the Card Repository class and "findAll" the Cards saved in database
-        //The route will be now built directly in the database, calling the Symfony Twig function "url"
-        $cards_repository = $this->getDoctrine()
-            ->getRepository('PinboardBundle:Card');
-
-        //now it's time to use the queryBuilder to created advanced queries.
-        //we refine Cards search looking for "active" and sorting ASC by "sort" field
-        //we bring all the logic inside the class CardRepository so it can be reusable
-        $cards = $cards_repository
-            ->getActiveCards('ASC');
+        //all the logic we implemented to find the cards at first has now been moved inside a Service
+        //responsible of the entire "cards" management.
+        //Here is where will be put also the future Cards logic.
+        $cards = $this->container->get('pinboard.cards_manager')
+            ->getCards('ASC');
 
         return $this->render('PinboardBundle:Frontend:index.html.twig', array(
             'homepage_h1' => $homepage_h1,

@@ -1,4 +1,5 @@
 services:
-#    pinboard.example:
-#        class: PinboardBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    pinboard.cards_manager:
+        class: PinboardBundle\Manager\CardsManager
+        #dependecy injection: We inject a service inside another ( as constructor parameter ) and gain the ability to use all its features
+        arguments: ['@doctrine.orm.entity_manager']
