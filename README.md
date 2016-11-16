@@ -111,7 +111,20 @@ php bin/console doctrine:schema:update --force
 ```
 - aggiunta di register nell'header
 - Setting flash message in home dopo creazione utente
-    
+   
+***TODO:***
+-----------   
+   
+Tag: 10
+-------
+- Modifica schema: creare relazione utente - cards ( 1 - m )
+- Aggiunta di form creazione nuova card personale utente
+    - Upload immagine
+- Visualizzazione in home delle mie cards
+
+Tag: 11
+-------
+- Aggiunta di [POST] route: "addToFavourites" ( aggiunge la card ai preferiti )
 
 
 
