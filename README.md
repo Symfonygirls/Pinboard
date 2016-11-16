@@ -99,8 +99,32 @@ Tag: 8
 
 Tag: 9 
 ------
-- Creazione form di registrazione ( Prima form! )
-- Invio mail con swift con password generata randomicamente
+- Creazione form di registrazione ( Prima form! ) ( http://symfony.com/doc/current/doctrine/registration_form.html )
+    - spiegazione di FormType e creazione di UserType
+    - creazione di registration controller
+    - aggiunta di "plainPassword" all'utente. Non viene usata o salvata, ma serve per la UserType form
+    - aggiunta di assert in classe utente per la validazione
+    - **NOTA** non aggiungiamo riferimento allo schema. NOn vogliamo il campo in DB
+```{r, engine='bash', count_lines}
+php bin/console generate:doctrine:entities UserBundle/Entity/User
+php bin/console doctrine:schema:update --force
+```
+- aggiunta di register nell'header
+- Setting flash message in home dopo creazione utente
+   
+***TODO:***
+-----------   
+   
+Tag: 10
+-------
+- Modifica schema: creare relazione utente - cards ( 1 - m )
+- Aggiunta di form creazione nuova card personale utente
+    - Upload immagine
+- Visualizzazione in home delle mie cards
+
+Tag: 11
+-------
+- Aggiunta di [POST] route: "addToFavourites" ( aggiunge la card ai preferiti )
 
 
 
