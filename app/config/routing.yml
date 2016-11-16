@@ -8,3 +8,5 @@ pinboard:
     type:     annotation
     prefix:   /
 
+logout:
+    path: /logout

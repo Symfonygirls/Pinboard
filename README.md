@@ -1,5 +1,8 @@
 pinboard
 ========
+php bin/console server:run
+
+http://172.16.220.130:8000/app_dev.php
 
 Tag: 1
 ------
@@ -70,12 +73,37 @@ Tag: 6
 
 Tag: 7
 ------
-- Security: Authorization vs Authentication
+- Security: Authorization vs Authentication e introduzione a Security component
 - Creazione di UserBundle
     - eppurazione da cartelle inutili ( views, controller Default )
 - Database Users Provider: http://symfony.com/doc/current/security/entity_provider.html 
 - Creiamo fixtures di utenti nel bundle UserBundle
 - Autentichiamo con Basic Auth
+
+Tag: 8
+------
+- Creazione header con pulsante di login
+    - creazione Partials/_header.html.twig
+    - creazione layout.html.twig per usare nostro layout dentro a bundle
+    - modifica di tutti i template gia creati per estendere questo
+    - se sono loggato mostro il nickname nell'header
+    - creare route di logout (non il controller) e link nell'header
+    - **NOTA**: firewall diversi non condividono autorizzazione. Meglio creare 1 firewall e aggiungere la login form li
+- Creazione di form di login
+    - creazione di SecurityController
+    - modifica di security.yml
+        - access controls
+- Creazione user personal dashboard
+    - creazione di DashboardController per separare un po di logica
+    - template
+
+Tag: 9 
+------
+- Creazione form di registrazione ( Prima form! )
+- Invio mail con swift con password generata randomicamente
+
+
+
 
     
 

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Pinboard - A Symfony Girls App!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% include "PinboardBundle:Partials:_header.html.twig" %}
+        {% block body %}{% endblock %}
+        {% block footer %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

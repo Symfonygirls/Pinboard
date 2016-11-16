@@ -8,11 +8,23 @@ security:
             entity:
                 class: UserBundle:User
                 property: username
-                # if you're using multiple entity managers
-                # manager_name: customer
 
     firewalls:
         main:
-            pattern:    ^/login
-            http_basic: ~
+            pattern: /
             provider: pinboard_db_provider
+            anonymous: ~
+            form_login:
+                check_path: /login
+                login_path: /login
+            logout:
+                path:   /logout
+                #this is the target route "/" where we will be redirected after succesfull logout
+                target: /
+
+    access_control:
+        #anonymously accessible routes let the user get in even if is not authenticated
+        - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        #this is the first "forbidden" route of our website!
+        - { path: ^/dashboard, roles: ROLE_USER }
