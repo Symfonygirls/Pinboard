@@ -1,7 +1,9 @@
 <div>
     Pinboard Header -
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        Hi {{ app.getUser().username }} - <a class="link" href="{{ url('logout') }}">Logout</a>
+        Hi {{ app.getUser().username }} -
+        <a class="link" href="{{ url('dashboard') }}">Dashboard</a> -
+        <a class="link" href="{{ url('logout') }}">Logout</a>
     {% else %}
         <a href="{{ url('login') }}">Login</a>
     {% endif %}

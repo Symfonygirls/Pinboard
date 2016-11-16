@@ -94,11 +94,12 @@ Tag: 8
     - modifica di security.yml
         - access controls
 - Creazione user personal dashboard
+    - creazione di DashboardController per separare un po di logica
     - template
 
 Tag: 9 
 ------
-- Creazione form di registrazione
+- Creazione form di registrazione ( Prima form! )
 - Invio mail con swift con password generata randomicamente
 
 
