@@ -99,7 +99,17 @@ Tag: 8
 
 Tag: 9 
 ------
-- Creazione form di registrazione ( Prima form! )
+- Creazione form di registrazione ( Prima form! ) ( http://symfony.com/doc/current/doctrine/registration_form.html )
+    - spiegazione di FormType e creazione di UserType
+    - creazione di registration controller
+    - aggiunta di "plainPassword" all'utente. Non viene usata o salvata, ma serve per la UserType form
+    - aggiunta di assert in classe utente per la validazione
+    - **NOTA** non aggiungiamo riferimento allo schema. NOn vogliamo il campo in DB
+```{r, engine='bash', count_lines}
+php bin/console generate:doctrine:entities UserBundle/Entity/User
+php bin/console doctrine:schema:update --force
+```
+- aggiunta di register nell'header
 - Invio mail con swift con password generata randomicamente
 
 
