@@ -10,10 +10,24 @@ class SecurityController extends Controller
 {
     /**
      * @Route("/login", name="login")
+     *
+     * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function loginAction(Request $request)
     {
-        //here we will perform a redirect to our dashboard. Still not present but is ok
-        die('this will be my dashboard!');
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        return $this->render('PinboardBundle:Security:login.html.twig', array(
+            'last_username' => $lastUsername,
+            'error'         => $error,
+        ));
     }
 }

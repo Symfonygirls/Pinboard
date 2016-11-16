@@ -2,6 +2,7 @@
 
 namespace PinboardBundle\Controller;
 
+use PinboardBundle\Manager\CardsManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException;
@@ -74,5 +75,12 @@ class FrontendController extends Controller
         return $this->render('PinboardBundle:Frontend:card.html.twig', array(
             'card' => $card
         ));
+    }
+
+    /**
+     * @Route("/dashboard", name="dashboard")
+     */
+    public function dashboardAction()
+    {
     }
 }
