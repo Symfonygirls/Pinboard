@@ -110,6 +110,7 @@ php bin/console generate:doctrine:entities UserBundle/Entity/User
 php bin/console doctrine:schema:update --force
 ```
 - aggiunta di register nell'header
+- Setting flash message in home dopo creazione utente
 - Invio mail con swift con password generata randomicamente
 
 

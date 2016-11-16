@@ -1,6 +1,13 @@
 {% extends '@Pinboard/layout.html.twig' %}
 
 {% block body %}
+
+    {% for flash_message in app.session.flashBag.get('notice') %}
+        <div class="flash-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
     <h1>{{ homepage_h1 }}</h1>
     {% for card in cards %}
         <div>

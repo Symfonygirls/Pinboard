@@ -37,6 +37,10 @@ class RegistrationController extends Controller
 
             // here wi will send the email in a while!
             //and we will set also a flash message
+            $this->addFlash(
+                'notice',
+                'User created!'
+            );
 
             //redirect to homepage
             return $this->redirectToRoute('homepage');
