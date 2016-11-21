@@ -1,7 +1,7 @@
 {% extends '@Pinboard/layout.html.twig' %}
 
 {% block body %}
-    <img src="{{ card.image }}">
+    <img src="{{ asset('uploads/cards/' ~ card.image) }}">
     <h1>{{ card.title }}</h1>
     <p>{{ card.description }}</p>
 {% endblock %}

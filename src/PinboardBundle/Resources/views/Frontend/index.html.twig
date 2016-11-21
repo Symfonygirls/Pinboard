@@ -10,11 +10,6 @@
 
     <h1>{{ homepage_h1 }}</h1>
     {% for card in cards %}
-        <div>
-            <img src="{{ card.image }}">
-            <h2>{{ card.title }}</h2>
-            <p>{{ card.description }}</p>
-            <a href="{{ path('card', {'slug': card.slug}) }}">Go to {{ card.title }}</a>
-        </div>
+        {% include "PinboardBundle:Partials:_card.html.twig" with { 'card': card } %}
     {% endfor %}
 {% endblock %}

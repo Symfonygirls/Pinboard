@@ -111,16 +111,33 @@ php bin/console doctrine:schema:update --force
 ```
 - aggiunta di register nell'header
 - Setting flash message in home dopo creazione utente
-   
-***TODO:***
------------   
-   
+     
 Tag: 10
 -------
 - Modifica schema: creare relazione utente - cards ( 1 - m )
+
+  
 - Aggiunta di form creazione nuova card personale utente
-    - Upload immagine
+    - creazione route "addCard" con form e gestione della post nel controller
+        - utilizzo di @Method annotation e FrameworkExtraBundle
+        - flash messages
+    - creazione submenu in Dashboard/index.html.twig 
+    - aggiunta di blocco flash messages
+    - Upload immagine ( http://symfony.com/doc/current/controller/upload_file.html )
+    - crop immagine da backend
 - Visualizzazione in home delle mie cards
+    - aggiunta di metodo a servizio CardsManager
+    - update repository
+    - creazione di un component per includere il blocco sia in home che nella dashboard
+    - eliminazione placeholder, utilizzo asset corretto
+    - update scheda card con asset immagine
+    
+***TODO:***
+-----------          
+
+Tag: 10.1
+-------
+- Integrazione frontend
 
 Tag: 11
 -------

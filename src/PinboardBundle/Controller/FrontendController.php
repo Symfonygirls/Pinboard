@@ -76,15 +76,4 @@ class FrontendController extends Controller
             'card' => $card
         ));
     }
-
-    /**
-     * Private page "Dashboard". Here we will see all the cards created by current user
-     *
-     * @Route("/dashboard", name="dashboard")
-     */
-    public function dashboardAction()
-    {
-        //Dashboard view
-        return $this->render('PinboardBundle:Dashboard:index.html.twig');
-    }
 }

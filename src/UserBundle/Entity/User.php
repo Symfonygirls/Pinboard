@@ -48,6 +48,11 @@ class User implements UserInterface, \Serializable
      */
     private $isActive;
 
+    /**
+     * @ORM\OneToMany(targetEntity="PinboardBundle\Entity\Card", mappedBy="user")
+     */
+    private $cards;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -205,5 +210,39 @@ class User implements UserInterface, \Serializable
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Add card
+     *
+     * @param \PinboardBundle\Entity\Card $card
+     *
+     * @return User
+     */
+    public function addCard(\PinboardBundle\Entity\Card $card)
+    {
+        $this->cards[] = $card;
+
+        return $this;
+    }
+
+    /**
+     * Remove card
+     *
+     * @param \PinboardBundle\Entity\Card $card
+     */
+    public function removeCard(\PinboardBundle\Entity\Card $card)
+    {
+        $this->cards->removeElement($card);
+    }
+
+    /**
+     * Get cards
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCards()
+    {
+        return $this->cards;
     }
 }

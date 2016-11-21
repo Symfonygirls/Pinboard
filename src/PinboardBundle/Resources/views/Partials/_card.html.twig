@@ -1,0 +1,6 @@
+<div>
+    <img src="{{ asset('uploads/cards/' ~ card.image) }}">
+    <h2>{{ card.title }}</h2>
+    <p>{{ card.description }}</p>
+    <a href="{{ path('card', {'slug': card.slug}) }}">Go to {{ card.title }}</a>
+</div>
