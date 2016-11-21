@@ -25,4 +25,21 @@ class CardRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    /**
+     * Retrieve all the user Cards
+     *
+     * @param $user
+     * @param $sort
+     * @return array
+     */
+    public function getCardsByUser($user, $sort)
+    {
+        return $this->createQueryBuilder('c')
+            ->where('c.user = :user')
+            ->setParameter('user', $user)
+            ->orderBy('c.sort', $sort)
+            ->getQuery()
+            ->getResult();
+    }
 }

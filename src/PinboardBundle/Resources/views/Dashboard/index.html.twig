@@ -13,5 +13,8 @@
             <a href="{{ url('add-card') }}">Add new Card</a>
         </li>
     </ul>
-    My Dahsboard
+
+    {% for user_card in user_cards %}
+        {% include "PinboardBundle:Partials:_card.html.twig" with { 'card': user_card } %}
+    {% endfor %}
 {% endblock %}

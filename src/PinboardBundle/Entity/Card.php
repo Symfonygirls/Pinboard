@@ -4,6 +4,8 @@ namespace PinboardBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Card
  *
@@ -36,9 +38,10 @@ class Card
     private $description;
 
     /**
-     * @var string
+     * @ORM\Column(type="string")
      *
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(message="Please, upload the image as png or jpg file")
+     * @Assert\File(mimeTypes={ "image/png", "image/jpeg" })
      */
     private $image;
 

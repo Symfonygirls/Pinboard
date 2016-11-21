@@ -123,11 +123,17 @@ Tag: 10
         - flash messages
     - creazione submenu in Dashboard/index.html.twig 
     - aggiunta di blocco flash messages
+    - Upload immagine ( http://symfony.com/doc/current/controller/upload_file.html )
+    - crop immagine da backend
+- Visualizzazione in home delle mie cards
+    - aggiunta di metodo a servizio CardsManager
+    - update repository
+    - creazione di un component per includere il blocco sia in home che nella dashboard
+    - eliminazione placeholder, utilizzo asset corretto
+    - update scheda card con asset immagine
     
 ***TODO:***
------------     
-    - Upload immagine
-- Visualizzazione in home delle mie cards
+-----------          
 
 Tag: 11
 -------

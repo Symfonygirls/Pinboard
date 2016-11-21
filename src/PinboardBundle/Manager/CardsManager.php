@@ -42,4 +42,17 @@ class CardsManager
         return $this->em->getRepository('PinboardBundle:Card')
             ->getActiveCards($sort);
     }
+
+    /**
+     * Here the logic to find user's cards
+     *
+     * @param $user
+     * @param string $sort
+     * @return array
+     */
+    public function getUserCards($user, $sort = 'ASC')
+    {
+        return $this->em->getRepository('PinboardBundle:Card')
+            ->getCardsByUser($user, $sort);
+    }
 }
