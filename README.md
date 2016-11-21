@@ -135,6 +135,10 @@ Tag: 10
 ***TODO:***
 -----------          
 
+Tag: 10.1
+-------
+- Integrazione frontend
+
 Tag: 11
 -------
 - Aggiunta di [POST] route: "addToFavourites" ( aggiunge la card ai preferiti )
