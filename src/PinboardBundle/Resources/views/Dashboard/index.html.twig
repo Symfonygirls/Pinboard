@@ -1,5 +1,17 @@
 {% extends '@Pinboard/layout.html.twig' %}
 
 {% block body %}
+
+    {% for flash_message in app.session.flashBag.get('notice') %}
+        <div class="flash-notice">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
+    <ul>
+        <li>
+            <a href="{{ url('add-card') }}">Add new Card</a>
+        </li>
+    </ul>
     My Dahsboard
 {% endblock %}

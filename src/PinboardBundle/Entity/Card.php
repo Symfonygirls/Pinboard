@@ -64,6 +64,11 @@ class Card
     private $active = false;
 
     /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="cards", cascade={"persist"})
+     */
+    private $user;
+
+    /**
      * Get id
      *
      * @return int
@@ -215,5 +220,29 @@ class Card
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \UserBundle\Entity\User $user
+     *
+     * @return Card
+     */
+    public function setUser(\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

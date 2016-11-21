@@ -111,14 +111,21 @@ php bin/console doctrine:schema:update --force
 ```
 - aggiunta di register nell'header
 - Setting flash message in home dopo creazione utente
-   
-***TODO:***
------------   
-   
+     
 Tag: 10
 -------
 - Modifica schema: creare relazione utente - cards ( 1 - m )
+
+  
 - Aggiunta di form creazione nuova card personale utente
+    - creazione route "addCard" con form e gestione della post nel controller
+        - utilizzo di @Method annotation e FrameworkExtraBundle
+        - flash messages
+    - creazione submenu in Dashboard/index.html.twig 
+    - aggiunta di blocco flash messages
+    
+***TODO:***
+-----------     
     - Upload immagine
 - Visualizzazione in home delle mie cards
 
