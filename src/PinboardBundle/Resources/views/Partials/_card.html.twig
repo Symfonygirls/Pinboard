@@ -1,6 +1,13 @@
-<div>
-    <img src="{{ asset('uploads/cards/' ~ card.image) }}">
-    <h2>{{ card.title }}</h2>
-    <p>{{ card.description }}</p>
-    <a href="{{ path('card', {'slug': card.slug}) }}">Go to {{ card.title }}</a>
+<div class="grid-item col-xs-12 col-sm-4 col-md-3 col-lg-3">
+    <div class="grid-item-content">
+        <img src="{{ asset('uploads/cards/' ~ card.image) }}">
+        <h3>
+            <a href="{{ path('card', {'slug': card.slug}) }}">{{ card.title }}</a><span class="star-count"><i class="glyphicon glyphicon-star"></i>21</span>
+        </h3>
+        <p>{{ card.description }}</p>
+        <div class="user">
+            <img src="http://placehold.it/100x100" alt="">
+            <a href="#">starlord88</a>
+        </div>
+    </div>
 </div>

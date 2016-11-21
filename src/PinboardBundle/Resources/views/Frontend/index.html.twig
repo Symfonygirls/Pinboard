@@ -8,8 +8,52 @@
         </div>
     {% endfor %}
 
-    <h1>{{ homepage_h1 }}</h1>
-    {% for card in cards %}
-        {% include "PinboardBundle:Partials:_card.html.twig" with { 'card': card } %}
-    {% endfor %}
+    <div class="container">
+        <div class="row">
+            <div class="grid">
+                <div class="grid-sizer col-xs-12 col-sm-4 col-md-3 col-lg-3"></div>
+
+                {% for card in cards %}
+                    {% include "PinboardBundle:Partials:_card.html.twig" with { 'card': card } %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="card-modal" tabindex="-1" role="dialog" aria-labelledby="card-modal-label">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <!-- !!RENDER AJAX!! -->
+                    <img src="http://placehold.it/1024x400" alt="">
+                    <h1>
+                        Card title
+                        <span class="star">
+                        <a href=""><i class="glyphicon glyphicon-star"></i></a>
+                    </span>
+                    </h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit. Donec sed odio dui. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Etiam porta sem malesuada magna mollis euismod. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- !!RENDER AJAX!! -->
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock %}
+
+
+
+

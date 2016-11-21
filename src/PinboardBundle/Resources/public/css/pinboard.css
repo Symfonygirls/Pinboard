@@ -1,0 +1,87 @@
+body {
+    padding-top: 70px;
+}
+
+.grid-item-content {
+    background: #FFF;
+    border: 1px solid hsla(0, 0%, 0%, 0);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px 10px 15px 10px;
+    transition: background-color .3s;
+    cursor: -webkit-zoom-in;
+}
+
+.grid-item-content:hover {
+    background-color: #f1f1f1;
+}
+
+.grid-item-content > img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.grid-item-content > h3 {
+    margin: 12px;
+    font-size: 1.15em;
+    padding-right: 2em;
+    position: relative;
+}
+
+.grid-item-content > h3 > span {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #CCC;
+}
+
+.grid-item-content > p {
+    margin: 0 12px 12px 12px;
+}
+
+.user {
+    margin: 0 12px 0 12px;
+}
+
+.user > img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+.user > a:link,
+.user > a:visited,
+.user > a:hover,
+.user > a:active {
+    color: #444;
+    font-weight: bold;
+}
+
+.modal-body > img {
+    width: 100%;
+}
+
+.modal-body > h1 {
+    padding-right: 40px;
+    position: relative;
+}
+
+.modal-body .star {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-body .star a:link,
+.modal-body .star a:visited,
+.modal-body .star a:hover,
+.modal-body .star a:active {
+    color: #000;
+}
+
+.modal-body .star a {
+    vertical-align: middle;
+}

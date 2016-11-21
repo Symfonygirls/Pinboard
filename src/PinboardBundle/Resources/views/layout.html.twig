@@ -5,6 +5,9 @@
         <title>{% block title %}Pinboard - A Symfony Girls App!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/pinboard/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/pinboard/css/bootstrap-theme.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/pinboard/css/pinboard.css') }}">
     </head>
     <body>
         {% include "PinboardBundle:Partials:_header.html.twig" %}
@@ -12,4 +15,33 @@
         {% block footer %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
+    <script src="{{ asset('bundles/pinboard/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/pinboard/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/pinboard/js/masonry.pkgd.min.js') }}"></script>
+    <script src="{{ asset('bundles/pinboard/js/imagesloaded.pkgd.min.js') }}"></script>
+
+    <script>
+        (function ($) {
+            $(function () {
+                var $grid = $('.grid').masonry({
+                    itemSelector: '.grid-item',
+                    columnWidth: '.grid-sizer',
+                    percentPosition: true
+                });
+
+                $grid.imagesLoaded().progress(function () {
+                    $grid.masonry('layout');
+                });
+
+                $('.grid-item').on('click', function (e) {
+                    $('#card-modal').modal('show');
+                });
+
+                $('.star').on('click', 'a', function (e) {
+                    e.preventDefault();
+                    $(this).find('i').toggleClass('glyphicon-star').toggleClass('glyphicon-star-empty');
+                });
+            });
+        }(jQuery));
+    </script>
 </html>
