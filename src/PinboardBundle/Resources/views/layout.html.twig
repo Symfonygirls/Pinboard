@@ -15,6 +15,8 @@
         {% block footer %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
     <script src="{{ asset('bundles/pinboard/js/jquery.min.js') }}"></script>
     <script src="{{ asset('bundles/pinboard/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('bundles/pinboard/js/masonry.pkgd.min.js') }}"></script>
@@ -33,9 +35,22 @@
                     $grid.masonry('layout');
                 });
 
-                $('.grid-item').on('click', function (e) {
+                /*$('.grid-item').on('click', function (e) {
                     $('#card-modal').modal('show');
+                });*/
+                $('.grid-item').on('click', function (e) {
+
+                    $.ajax({
+                        type: "GET",
+                        url: Routing.generate('card', { slug: $(this).data('slug') }),
+                        success: function(msg)
+                        {
+                            $("#card-modal").modal("show");
+                            $(".modal-body").html(msg);
+                        }
+                    });
                 });
+
 
                 $('.star').on('click', 'a', function (e) {
                     e.preventDefault();

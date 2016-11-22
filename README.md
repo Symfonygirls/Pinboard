@@ -132,12 +132,16 @@ Tag: 10
     - eliminazione placeholder, utilizzo asset corretto
     - update scheda card con asset immagine
     
-***TODO:***
------------          
-
 Tag: 10.1
 -------
 - Integrazione frontend
+    - customizzazione template form
+    - chiamata asincrona e apertura della card in home tramite overlay  
+        - fosJsRoutingBundle: https://symfony.com/doc/master/bundles/FOSJsRoutingBundle
+        - modificare template card.html.twig ed eliminare inclusione layout
+
+***TODO:***
+-----------  
 
 Tag: 11
 -------

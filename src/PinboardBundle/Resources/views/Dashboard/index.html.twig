@@ -1,26 +1,29 @@
 {% extends '@Pinboard/layout.html.twig' %}
 
 {% block body %}
-
-    {% for flash_message in app.session.flashBag.get('notice') %}
-        <div class="alert alert-success">
-            {{ flash_message }}
-        </div>
-    {% endfor %}
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ url('add-card') }}">Add new Card</a></li>
+    <div class="container">
+        <div class="row">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cards actions <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url('add-card') }}">Add new Card</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-        </ul>
-    </div>
+            </div>
 
-    {% for user_card in user_cards %}
-        {% include "PinboardBundle:Partials:_card.html.twig" with { 'card': user_card } %}
-    {% endfor %}
+            {% for flash_message in app.session.flashBag.get('notice') %}
+                <div class="alert alert-success">
+                    {{ flash_message }}
+                </div>
+            {% endfor %}
+
+            {% for user_card in user_cards %}
+                {% include "PinboardBundle:Partials:_card.html.twig" with { 'card': user_card } %}
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}
