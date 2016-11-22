@@ -53,7 +53,6 @@ class DashboardController extends Controller
             ->add('title', TextType::class)
             ->add('description', TextType::class)
             ->add('image', FileType::class)
-            ->add('slug', TextType::class)
             ->add('save', SubmitType::class, array('label' => 'Create Card'))
             ->getForm();
 
@@ -75,7 +74,7 @@ class DashboardController extends Controller
 
             // Move the file to the directory where brochures are stored
             $file->move(
-                $this->getParameter('brochures_directory'),
+                $this->getParameter('cards_images_directory'),
                 $fileName
             );
 

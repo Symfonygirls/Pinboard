@@ -5,6 +5,7 @@ namespace PinboardBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 
 /**
  * Card
@@ -14,6 +15,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Card
 {
+    use ORMBehaviors\Sluggable\Sluggable;
+
     /**
      * @var int
      *
@@ -48,13 +51,6 @@ class Card
     /**
      * @var string
      *
-     * @ORM\Column(type="string", length=255, unique=true)
-     */
-    private $slug;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255)
      */
     private $sort = 0;
@@ -70,6 +66,17 @@ class Card
      * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="cards", cascade={"persist"})
      */
     private $user;
+
+    /**
+     * Defines sluggable fields
+     *
+     * @return array
+     */
+    public function getSluggableFields()
+    {
+        return [ 'title' ];
+    }
+
 
     /**
      * Get id
@@ -151,30 +158,6 @@ class Card
     public function getImage()
     {
         return $this->image;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     *
-     * @return Card
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 
     /**

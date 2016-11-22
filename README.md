@@ -139,6 +139,10 @@ Tag: 10.1
     - chiamata asincrona e apertura della card in home tramite overlay  
         - FOSJsRoutingBundle: https://symfony.com/doc/master/bundles/FOSJsRoutingBundle
         - modificare template card.html.twig ed eliminare inclusione layout
+    - ottimizzazione: doctrine behaviours e attivazione di sluggable: mettiamo lo slug automatico
+        - rimuoviamo il vecchio campo "slug"
+        - rimuoviamo il campo della form in dashboardController
+        - schema update
 
 ***TODO:***
 -----------  

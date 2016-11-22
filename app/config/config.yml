@@ -72,5 +72,10 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+#Fos routing bundle
 fos_js_routing:
     routes_to_expose: [ 'card' ]
+
+# Knp Doctrine Behaviors
+knp_doctrine_behaviors:
+    sluggable:      true
