@@ -9,7 +9,7 @@ class LoadCardFixtures implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $card1 = new Card();
+        /*$card1 = new Card();
         $card1->setTitle('Card 1');
         $card1->setDescription('Card 1 description');
         $card1->setImage('https://placehold.it/300x200');
@@ -52,6 +52,6 @@ class LoadCardFixtures implements FixtureInterface
 
         $manager->persist($card4);
 
-        $manager->flush();
+        $manager->flush();*/
     }
 }

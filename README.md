@@ -143,6 +143,7 @@ Tag: 10.1
         - rimuoviamo il vecchio campo "slug"
         - rimuoviamo il campo della form in dashboardController
         - schema update
+    - rimozione delle fixtures e creazione solo di un utente  
 
 ***TODO:***
 -----------  
